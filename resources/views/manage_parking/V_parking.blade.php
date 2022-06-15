@@ -15,7 +15,7 @@
       </div>
       <div class="row mt-3">
         <div class="col-12 text-right">
-          <a href="{{ url('/manage-user/create') }}" class="btn btn-info"><i class="fas fa-plus-circle"></i> Tambah User</a>
+          <a href="{{ url('/export-parking') }}" class="btn btn-success">Export</a>
         </div>
       </div>
     </div>
@@ -25,27 +25,26 @@
         <thead>
           <tr class="text-center">
             <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
+            <th>User</th>
+            <th>Nopol</th>
+            <th>Kode</th>
+            <th>IN</th>
+            <th>OUT</th>
+            <th>Status</th>
             <th>Created At</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
           @foreach ($datas as $data)
           <tr class="text-center">
             <td>{{ $data->id }}</td>
-            <td>{{ $data->name }}</td>
-            <td>{{ $data->email }}</td>
+            <td>{{ $data->user->name }}</td>
+            <td>{{ $data->nopol }}</td>
+            <td>{{ $data->code }}</td>
+            <td>{{ $data->intime }}</td>
+            <td>{{ $data->outtime }}</td>
+            <td>{{ $data->status }}</td>
             <td>{{ $data->created_at }}</td>
-            <td class="text-center">
-              <form action="{{ url('/manage-user/'.$data->id) }}" onsubmit="return confirm('Do you really want to delete it?');" method="POST">
-                @method('DELETE')
-                @csrf
-                <a href="{{ url('/manage-user/'.$data->id.'/edit') }}" class="btn btn-sm btn-warning" title="Edit"><i class="fas fa-edit" style="color: white;"></i></a>
-                <button type="submit" class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-trash-alt" style="color: white;"></i></button>
-              </form>
-            </td>
           </tr>
           @endforeach
         </tbody>

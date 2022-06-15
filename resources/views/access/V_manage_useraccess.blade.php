@@ -18,7 +18,7 @@
         <thead>
           <tr class="text-center">
             <th>ID</th>
-            <th>Username</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Roles</th>
             <th>Permissions</th>
@@ -31,7 +31,7 @@
           @foreach ($datas as $data)
           <tr class="text-center">
             <td>{{ $data->id }}</td>
-            <td>{{ $data->username }}</td>
+            <td>{{ $data->name }}</td>
             <td>{{ $data->email  }}</td>
             <td>
               @foreach ($data->roles as $role)
@@ -46,7 +46,7 @@
             <td>{{ $data->created_at  }}</td>
             <td>{{ $data->updated_at  }}</td>
             <td class="text-center">
-              <a href="{{ url('/admin-access/'.$data->id.'/edit') }}" class="btn btn-sm btn-warning" title="Edit"><i class="fas fa-edit" style="color: white;"></i></a>
+              <a href="{{ url('/user-access/'.$data->id.'/edit') }}" class="btn btn-sm btn-warning" title="Edit"><i class="fas fa-edit" style="color: white;"></i></a>
             </td>
           </tr>
           @endforeach

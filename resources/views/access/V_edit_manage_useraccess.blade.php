@@ -19,12 +19,12 @@
     <!-- /.card-header -->
     <div class="card-body">
       <div class="container">
-        <form action="{{ url('admin-access/'.$data['id']) }}" method="post">
+        <form action="{{ url('user-access/'.$data['id']) }}" method="post">
           @csrf
           @method('PUT')
           <div class="form-group">
-            <label for="roles">Nama Admin*</label>
-            <input type="text" class="form-control" id="roles" aria-describedby="rolesHelp" placeholder="Enter Admin" name="roles" value="{{ $data['username'] }}" required>
+            <label for="roles">Nama User*</label>
+            <input type="text" class="form-control" id="roles" aria-describedby="rolesHelp" placeholder="Enter Admin" name="roles" value="{{ $data['name'] }}" disabled required>
           </div>
           <div class="form-group">
             <label>Roles</label>

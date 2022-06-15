@@ -50,6 +50,22 @@ Route::middleware(['ceklogin'])->group(function () {
     Route::resource('manage-user', 'User\UserController');
     // ===== ./Manage User =====
 
+    // ======================= Manage Parking =======================
+    Route::get('parking-gatein', function () {
+        return view('parking/V_gatein');
+    });
+    Route::get('parking-gateout', function () {
+        return view('parking/V_gateout');
+    });
+    Route::post('parking-gatein', 'Parking\ParkingController@gatein');
+    Route::post('parking-gateout', 'Parking\ParkingController@gateout');
+    Route::post('export-parking', 'Parking\ManageParkingController@export_data');
+    Route::resource('manage-parking', 'Parking\ManageParkingController');
+    Route::get('export-parking', function () {
+        return view('manage_parking/export');
+    });
+    // ===== ./Manage User =====
+
     // ======================= Access =======================
     Route::resource('permissions', 'Access\ManagePermissionsController');
     Route::resource('roles', 'Access\ManageRolesController');

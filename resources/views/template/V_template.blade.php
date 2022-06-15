@@ -136,15 +136,33 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ url('manage-user') }}" class="nav-link">
+                  <a href="{{ url('parking-gatein') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Gate In</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url('manage-user') }}" class="nav-link">
+                  <a href="{{ url('parking-gateout') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Gate Out</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            @if(in_array("admin", Auth::user()->roles->toArray()))
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-parking"></i>
+                <p>
+                  Parking
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ url('manage-parking') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Manage Parking</p>
                   </a>
                 </li>
               </ul>
@@ -195,6 +213,7 @@
                 </li>
               </ul>
             </li>
+            @endif
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -208,7 +227,7 @@
 
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</stron g>
+      <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
           <b>Version</b> 3.0.5

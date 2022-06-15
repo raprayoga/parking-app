@@ -18,29 +18,6 @@
         <form action="{{ url('edit-profile-process') }}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label for="email">Foto Profile</label>
-            <div class="text-center img-wrap">
-              <img src="<?= url('/img/profile/' . $data->photo_profile) ?>" alt="foto profil" class="img-fluid img-profile" style="max-height: 200px; max-width: 200px;">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="custom-file mb-4">
-              <input type="file" name="gambarupload" class="custom-file-input" id="gambar-profile" onchange="prvwimg()">
-              <label class="custom-file-label" for="gambar-profile">Choose file...</label>
-              <small>Tipe file yang diperbolehkan adalah jpg, jpeg, dan png</small>
-              <small>max file size 200kb</small>
-              @if ($errors->get('photo_profile'))
-              <div class="invalid-feedback" style="display: block;">
-                <ul style="list-style: none;">
-                  @foreach ($errors->get('photo_profile') as $errorphoto_profile)
-                  <li>{{ $errorphoto_profile }}</li>
-                  @endforeach
-                </ul>
-              </div>
-              @endif
-            </div>
-          </div>
-          <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" value="{{ $data->email }}" required>
             @if ($errors->get('email'))
@@ -54,13 +31,13 @@
             @endif
           </div>
           <div class="form-group">
-            <label for="Username">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" value="{{ $data->username }}" required>
-            @if ($errors->get('username'))
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value="{{ $data->name }}" required>
+            @if ($errors->get('name'))
             <div class="invalid-feedback" style="display: block;">
               <ul style="list-style: none;">
-                @foreach ($errors->get('username') as $errorusername)
-                <li>{{ $errorusername }}</li>
+                @foreach ($errors->get('name') as $errorname)
+                <li>{{ $errorname }}</li>
                 @endforeach
               </ul>
             </div>

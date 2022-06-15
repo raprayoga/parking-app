@@ -17,8 +17,7 @@ class UserController extends Controller
 
   function __construct()
   {
-    $this->middleware('permission:manage user action')->except('index');
-    $this->middleware('permission:manage user')->only('index');
+    $this->middleware('permission:manage user');
   }
 
   /**

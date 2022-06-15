@@ -54,23 +54,6 @@
       <!-- /.card-body -->
     </div>
 
-    <script>
-      function prvwimg() {
-        const gambarProfile = document.querySelector("#gambar-profile");
-        const label = document.querySelector(".custom-file-label");
-        const imgprvw = document.querySelector(".img-profile");
-
-        label.textContent = gambarProfile.files[0].name;
-
-        const filegambar = new FileReader();
-        filegambar.readAsDataURL(gambarProfile.files[0]);
-
-        filegambar.onload = function(e) {
-          imgprvw.src = e.target.result;
-        };
-      }
-    </script>
-
     @if (session()->has('updateerror'))
     <script>
       Swal.fire({

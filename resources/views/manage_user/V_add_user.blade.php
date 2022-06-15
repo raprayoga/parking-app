@@ -22,19 +22,6 @@
         <form action="{{ url('manage-user') }}" id="form" method="post">
           @csrf
           <div class="form-group">
-            <label for="username">Username*</label>
-            <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter Username" name="username" value="{{ old('username') }}" required>
-            @if ($errors->get('username'))
-            <div class="invalid-feedback" style="display: block;">
-              <ul style="list-style: none;">
-                @foreach ($errors->get('username') as $errorusername)
-                <li>{{ $errorusername }}</li>
-                @endforeach
-              </ul>
-            </div>
-            @endif
-          </div>
-          <div class="form-group">
             <label for="name">Name*</label>
             <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name" name="name" value="{{ old('name') }}" required>
             @if ($errors->get('name'))
@@ -55,86 +42,6 @@
               <ul style="list-style: none;">
                 @foreach ($errors->get('email') as $erroremail)
                 <li>{{ $erroremail }}</li>
-                @endforeach
-              </ul>
-            </div>
-            @endif
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone*</label>
-            <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone" name="phone" value="{{ old('phone') }}" required>
-            @if ($errors->get('phone'))
-            <div class="invalid-feedback" style="display: block;">
-              <ul style="list-style: none;">
-                @foreach ($errors->get('phone') as $errorphone)
-                <li>{{ $errorphone }}</li>
-                @endforeach
-              </ul>
-            </div>
-            @endif
-          </div>
-          <div class="form-group">
-            <label for="alamat">Alamat</label>
-            <textarea class="form-control" name="alamat" placeholder="Place some text here" rows="3">{{ old('alamat') }}</textarea>
-            <small class="text-primary">Tidak boleh lebih dari 255 karakter</small>
-            @if ($errors->get('alamat'))
-            <div class="invalid-feedback" style="display: block;">
-              <ul style="list-style: none;">
-                @foreach ($errors->get('alamat') as $erroralamat)
-                <li>{{ $erroralamat }}</li>
-                @endforeach
-              </ul>
-            </div>
-            @endif
-          </div>
-          <div class="form-group">
-            <label>Tgl Lahir</label>
-            <div class="input-group date" id="tgl_lahir" data-target-input="nearest">
-              <input type="text" class="form-control datetimepicker-input" data-target="#tgl_lahir" name="tgl_lahir" id="tgl_lahir_value" required />
-              <div class="input-group-append" data-target="#tgl_lahir" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-              </div>
-            </div>
-            @if ($errors->get('tgl_lahir'))
-            <div class="invalid-feedback" style="display: block;">
-              <ul style="list-style: none;">
-                @foreach ($errors->get('tgl_lahir') as $errortgl_lahir)
-                <li>{{ $errortgl_lahir }}</li>
-                @endforeach
-              </ul>
-            </div>
-            @endif
-          </div>
-          <div class="form-group">
-            <label for="tempat_lahir">Tempat Lahir</label>
-            <input type="text" class="form-control" id="tempat_lahir" aria-describedby="tempat_lahirHelp" placeholder="Enter tempat_lahir" name="tempat_lahir" value="{{ old('tempat_lahir') }}" required>
-            @if ($errors->get('tempat_lahir'))
-            <div class="invalid-feedback" style="display: block;">
-              <ul style="list-style: none;">
-                @foreach ($errors->get('tempat_lahir') as $errortempat_lahir)
-                <li>{{ $errortempat_lahir }}</li>
-                @endforeach
-              </ul>
-            </div>
-            @endif
-          </div>
-          <div class="form-group">
-            <label for="pendidikan">Pendidikan</label>
-            <select class="custom-select" id="pendidikan" name="pendidikan" required>
-              <option selected>Choose...</option>
-              <option value="sd" <?php if (old('pendidikan')  == 'sd') echo 'selected' ?>>SD</option>
-              <option value="smp" <?php if (old('pendidikan')  == 'smp') echo 'selected' ?>>SMP</option>
-              <option value="sma" <?php if (old('pendidikan')  == 'sma') echo 'selected' ?>>SMA</option>
-              <option value="s1" <?php if (old('pendidikan')  == 's1') echo 'selected' ?>>S1</option>
-              <option value="s2" <?php if (old('pendidikan')  == 's2') echo 'selected' ?>>S2</option>
-              <option value="s3" <?php if (old('pendidikan')  == 's3') echo 'selected' ?>>S3</option>
-              <option value="s1" <?php if (old('pendidikan')  == 's1') echo 'selected' ?>>Lainnya</option>
-            </select>
-            @if ($errors->get('pendidikan'))
-            <div class="invalid-feedback" style="display: block;">
-              <ul style="list-style: none;">
-                @foreach ($errors->get('pendidikan') as $errorpendidikan)
-                <li>{{ $errorpendidikan }}</li>
                 @endforeach
               </ul>
             </div>

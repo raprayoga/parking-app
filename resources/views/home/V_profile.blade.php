@@ -15,20 +15,12 @@
     <!-- /.card-header -->
     <div class="card-body">
       <div class="container">
-        <div class="row">
-          <div class="col-5 col-md-3 text-right">
-            Foto Profil :
-          </div>
-          <div class="col-5 col-md-5 text-left">
-            <img src="<?= url('/img/profile/' . $data->photo_profile) ?>" alt="" class="img-fluid img-thumbnail">
-          </div>
-        </div>
         <div class="row mt-3">
           <div class="col-5 col-md-3 text-right">
-            Username :
+            Nem :
           </div>
           <div class="col-7 col-md-9 text-left">
-            {{ $data->username }}
+            {{ $data->name }}
           </div>
         </div>
         <div class="row mt-3">
@@ -37,22 +29,6 @@
           </div>
           <div class="col-7 col-md-9 text-left">
             {{ $data->email }}
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-5 col-md-3 text-right">
-            Divisi :
-          </div>
-          <div class="col-7 col-md-9 text-left">
-            {{ $data->divisi }}
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-5 col-md-3 text-right">
-            Jabatan :
-          </div>
-          <div class="col-7 col-md-9 text-left">
-            {{ $data->jabatan }}
           </div>
         </div>
         <div class="row mt-1 text-right">
